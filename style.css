@@ -1,0 +1,112 @@
+:root {
+    --margin-large: 20px;
+    --margin-medium: 10px;
+    --margin-small: 5px;
+
+    --padding: 20px;
+
+    --grid-gap-large: 20px;
+    --grid-gap-medium: 15px;
+    --grid-gap-small: 10px;
+
+    --header-bg: #1a3a6c; 
+    --footer-bg: #ff6f30; 
+    --grid-bg: #f1f1f1; 
+    --text-color: #333333; 
+    --border-radius: 8px;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#harta-destinatii {
+    width: auto;    
+    height: auto;   
+    max-width: none; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--header-bg);
+    color: white;
+    padding: var(--padding);
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+footer {
+    background-color: var(--footer-bg);
+    color: white;
+    padding: var(--padding);
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+main {
+    padding: var(--margin-large);
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--grid-gap-large);
+    background-color: var(--grid-bg);
+    border-radius: var(--border-radius);
+    padding: var(--padding);
+}
+
+.grid-item {
+    background-color: white;
+    padding: var(--padding);
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 1024px) {
+    body {
+        margin-left: var(--margin-medium);
+        margin-right: var(--margin-medium);
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--grid-gap-medium);
+    }
+
+    header, footer {
+        padding: var(--padding);
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        margin-left: var(--margin-small);
+        margin-right: var(--margin-small);
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: var(--grid-gap-small);
+    }
+
+    header, footer {
+        padding: var(--padding);
+    }
+}
+
+img, video {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
