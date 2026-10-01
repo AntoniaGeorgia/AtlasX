@@ -1,0 +1,408 @@
+$bar-count: 3;
+$bar-delay-step: 300ms;
+
+#hamburger,
+#ch-menu {
+  display: none;
+}
+
+nav {
+  --inaltime-meniu: 30px;
+  --latime-buton: 100px;
+  background-color: var(--buton-color);
+  height: var(--inaltime-meniu);
+  position: sticky;
+  top: 0;
+}
+
+ul.meniu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    height: var(--inaltime-meniu);
+    border: 1px solid var(--footer-color);
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    line-height: var(--inaltime-meniu);
+    transition: all 1s linear;
+    position: relative;
+    background-color: white;
+
+    &:hover {
+      background-color: var(--footer-color);
+      cursor: pointer;
+
+      a,
+      div {
+        text-decoration: none;
+      }
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: 0;
+        width: 100%;
+        height: 5px;
+        background-color: var(--footer-color);
+        opacity: 0;
+        transition: top 0.4s ease, opacity 0.4s ease;
+      }
+
+      &:hover::before {
+        top: 0;
+        opacity: 1;
+      }
+
+      > ul {
+        opacity: 1;
+        transform: scaleY(1);
+        pointer-events: all;
+      }
+    }
+
+    > .text-icon,
+    > .imag-icon {
+      display: inline-block;
+      text-align: center;
+      margin: 5px;
+    }
+
+    .imag-icon {
+      font-size: 20px;
+    }
+
+    ul {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
+      padding: 10px;
+      list-style: none;
+      gap: 5px;
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: top;
+      transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+      pointer-events: none;
+
+      li {
+        margin: 0;
+
+        a {
+          position: relative;
+          overflow: hidden;
+          color: var(--buton-color);
+          text-decoration: none;
+          font-size: 14px;
+          display: block;
+          padding: 5px;
+          border-radius: 4px;
+          background-color: transparent;
+          transition: background-color 0.3s, color 0.3s;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            height: 2px;
+            width: 0;
+            background-color: var(--buton-color);
+            transition: width 0.3s ease-in-out;
+          }
+
+          &:hover {
+            background-color: var(--buton-color);
+            color: white;
+
+            &::after {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media print {
+  img,
+  video,
+  iframe,
+  figcaption,
+  .link-inceput,
+  nav,
+  .meniu {
+    display: none !important;
+  }
+
+  .grid,
+  [class*="grid"] {
+    display: block !important;
+  }
+
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+  footer p.banner {
+    position: fixed;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    border: 1px dotted black;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  h1 {
+    page-break-before: always;
+    page-break-after: always;
+    text-align: center;
+    font-size: 2.5em;
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+
+  footer {
+    page-break-before: always;
+  }
+
+  body::after {
+    content: "Sava Antonia";
+    position: fixed;
+    bottom: 1cm;
+    right: 1cm;
+    width: 100px;
+    height: 2cm;
+    border: 3px double black;
+    opacity: 0.65;
+    text-align: center;
+    font-size: 12px;
+    line-height: 2cm;
+    z-index: 1000;
+  }
+
+  @page:left {
+    margin-left: 2.5cm;
+    margin-right: 0.5cm;
+  }
+
+  @page:right {
+    margin-left: 0.5cm;
+    margin-right: 2.5cm;
+  }
+
+  @page {
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .meniu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    gap: 10px;
+    transform: scaleY(0);
+    transform-origin: top;
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  }
+
+  .meniu li {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px) scale(0.9);
+  }
+
+  .meniu li a {
+    color: white;
+    text-decoration: none;
+  }
+
+  .meniu li:hover::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    animation: shadowSlide 0.3s forwards;
+  }
+
+  // ✅ Afișează meniul când e bifat checkbox-ul
+  #ch-menu:checked ~ nav .meniu {
+    display: flex;
+    transform: scaleY(1);
+    opacity: 1;
+  }
+
+  // ✅ Animăm opțiunile de meniu când se deschide
+ @keyframes animatieMeniuMic {
+    0% {
+        opacity: 0;
+        transform: scaleX(0) scaleY(0.8);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scaleX(1.1) scaleY(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1) scaleY(1);
+    }
+}
+
+
+
+
+  #ch-menu:checked ~ nav .meniu li {
+    animation: animatieMeniuMic 0.6s ease forwards;
+  }
+
+  // ✅ Efect de cascadă (animație întârziată)
+  #ch-menu:checked ~ nav .meniu li:nth-child(1) {
+    animation-delay: 0.1s;
+  }
+  #ch-menu:checked ~ nav .meniu li:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  #ch-menu:checked ~ nav .meniu li:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  #ch-menu:checked ~ nav .meniu li:nth-child(4) {
+    animation-delay: 0.4s;
+  }
+
+  
+  .hamburger-menu {
+    position: relative;
+    width: 40px;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+    z-index: 200;
+
+    .bar {
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      background-color: black;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    .bar1 { top: 0; }
+    .bar2 { top: 13px; }
+    .bar3 { top: 26px; }
+  }
+
+  #ch-menu:checked + .hamburger-menu .bar1 {
+    transform: rotate(45deg) translateY(13px);
+  }
+
+  #ch-menu:checked + .hamburger-menu .bar2 {
+    opacity: 0;
+  }
+
+  #ch-menu:checked + .hamburger-menu .bar3 {
+    transform: rotate(-45deg) translateY(-13px);
+  }
+}
+$bar-count: 3;
+$bar-delay-step: 300ms;
+
+// animația fiecărei bare
+@keyframes hamburgerBarAnim {
+  0% {
+    background-color: white;
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    background-color: orange;
+    transform: scale(1.4) rotate(15deg);
+    opacity: 0.5;
+  }
+  100% {
+    background-color: crimson;
+    transform: scale(1.1) rotate(-15deg);
+    opacity: 1;
+  }
+}
+
+// stil de bază pentru bara de hamburger
+.hamburger-menu {
+  position: relative;
+  width: 40px;
+  height: 30px;
+  display: none; // ascuns implicit, apare doar pe mobil
+  cursor: pointer;
+  z-index: 1000;
+
+  .bar {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    left: 0;
+    transition: all 0.3s ease;
+    opacity: 1;
+  }
+
+  .bar1 { top: 0; }
+  .bar2 { top: 13px; }
+  .bar3 { top: 26px; }
+}
+
+// animația declanșată la deschiderea meniului
+@media screen and (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  // aplicăm animația succesiv pe fiecare bară
+  #ch-menu:checked + .hamburger-menu {
+    @for $i from 1 through $bar-count {
+      .bar#{$i} {
+        animation: hamburgerBarAnim 0.6s ease forwards;
+        animation-delay: $bar-delay-step * ($i - 1);
+      }
+    }
+  }
+
+  // reset la închiderea meniului
+  #ch-menu:not(:checked) + .hamburger-menu .bar {
+    animation: none;
+    background-color: white;
+    transform: rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}

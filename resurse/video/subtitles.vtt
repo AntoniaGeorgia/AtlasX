@@ -1,0 +1,24 @@
+WEBVTT
+
+STYLE
+::cue {
+  background-color: #f0f8ff; 
+  color: #001f3f;            
+  font-weight: bold;
+}
+
+1
+00:00:01.000 --> 00:00:03.000
+<u>Summer is near</u>, and I still hadn't found a vacation that was both affordable and in a beautiful destination...
+
+2
+00:00:03.500 --> 00:00:05.000 line:5% position:100% align:end
+Everything seemed expensive or... disappointing.
+
+3
+00:00:05.500 --> 00:00:08.500
+But luckily, my friend showed me AtlasX – the site that saved our summer plans.
+
+4
+00:00:09.000 --> 00:00:12.000
+We got great discounts and now we're off on an unforgettable vacation! 🌞✈️

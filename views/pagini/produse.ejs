@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AtlasX Travel">
+    <meta name="keywords" content="excursii, pachete turistice, călătorii, vacanțe, turism, destinații exotice">
+    <meta name="description" content="AtlasX - Descoperă cele mai frumoase destinații și rezervă-ți vacanța de vis cu cele mai bune oferte.">
+    <meta name="msapplication-TileColor" content="purple">
+        <link rel="stylesheet" href="/resurse/css/produse.css" type="text/css" />
+        
+        <%- include("../fragmente/head") %>     
+        <script type="text/javascript" src=/resurse/js/produse.js></script>
+        <script type="text/javascript" src=/resurse/js/produse-cos.js></script>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+    </head>
+    <body>
+    <!-- <header class="c1" id="titlu" > -->
+        <!-- <h1 style="color:red;">Cofetaria <span>Dulcelind</span></h1> -->
+        <%- include("../fragmente/header") %>
+    <!-- </header> -->
+
+    <div id="paginare" class="d-flex gap-2 mt-3"></div>
+
+    <div class="actiuni-produs">
+  <button class="btn btn-outline-secondary btn-pastreaza" title="Păstrează produsul"><i class="fas fa-thumbtack"></i></button>
+  <button class="btn btn-outline-secondary btn-ascunde-temporar" title="Ascunde temporar produsul"><i class="fas fa-eye-slash"></i></button>
+  <button class="btn btn-outline-secondary btn-ascunde-permanent" title="Ascunde permanent în sesiune"><i class="fas fa-ban"></i></button>
+</div>
+
+
+    <main>
+        <!-- <label> Nume: <input type="text" id="inp-nume"></label> -->
+        <!--<label> Maxim calorii: <input type="number" id="inp-calorii" value="10000"></label>-->
+        <div class="form-floating mb-3">
+  <input type="text" class="form-control bg-white" id="inp-nume" placeholder=" " />
+  <label for="inp-nume">Nume</label>
+  <div class="invalid-feedback">
+    Numele nu poate conține cifre.
+  </div>
+</div>
+
+
+        
+        <div class="row mb-3">
+  <label class="form-label">Durata zile:</label>
+  <div class="col-12 col-md-6 col-lg-3">
+    <input type="radio" class="btn-check" name="gr_rad" id="i_rad1" value="0:3">
+    <label class="btn btn-outline-primary w-100" for="i_rad1">Weekend &lt; 3</label>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3">
+    <input type="radio" class="btn-check" name="gr_rad" id="i_rad2" value="3:5">
+    <label class="btn btn-outline-primary w-100" for="i_rad2">3 ≤ Weekend &lt; 5</label>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3">
+    <input type="radio" class="btn-check" name="gr_rad" id="i_rad3" value="5:14">
+    <label class="btn btn-outline-primary w-100" for="i_rad3">Vacanță ≥ 5</label>
+  </div>
+  <div class="col-12 col-md-6 col-lg-3">
+    <input type="radio" class="btn-check" name="gr_rad" id="i_rad4" value="toate" checked>
+    <label class="btn btn-outline-primary w-100" for="i_rad4">Toate</label>
+  </div>
+</div>
+
+
+    
+
+        <label for="inp-pret" class="form-label">Preț minim:</label>
+  <input type="range" class="form-range" id="inp-pret" value="0" min="0" max="11200">
+  <span id="infoRange">(0)</span>
+
+       
+
+        <label for="inp-categorie">Categorie:
+  <select id="inp-categorie">
+    <option value="toate" <%= categorieSelectata === "toate" ? "selected" : "" %>>toate</option>
+    <% for (let opt of categorii) { %>
+      <option value="<%= opt.unnest %>" <%= opt.unnest === categorieSelectata ? "selected" : "" %>><%= opt.unnest %></option>
+    <% } %>
+  </select>
+</label>
+
+
+        
+
+     <div class="custom-multiselect">
+  <div class="select-box" onclick="toggleDropdown()">Selectează destinații ⮟</div>
+  <div class="checkboxes" id="dropdown-destinatii">
+    <% for (let opt of destinatii) { %>
+      <label><input type="checkbox" value="<%= opt.destinatie %>"> <%= opt.destinatie %></label>
+    <% } %>
+  </div>
+</div>
+
+
+
+        <p>
+       <div class="d-flex flex-wrap gap-2 mb-3">
+  <button id="filtrare" class="btn btn-primary btn-lg">
+    <i class="bi bi-funnel-fill"></i> <span class="d-none d-sm-inline">Filtrează</span>
+  </button>
+  <button id="resetare" class="btn btn-secondary btn-lg">
+    <i class="bi bi-arrow-clockwise"></i> <span class="d-none d-sm-inline">Resetează</span>
+  </button>
+  <button id="sortCrescNume" class="btn btn-primary btn-lg">
+    <i class="bi bi-sort-down-alt"></i> <span class="d-none d-sm-inline">Sort ↑ preț + nume</span>
+  </button>
+  <button id="sortDescrescNume" class="btn btn-primary btn-lg">
+    <i class="bi bi-sort-up-alt"></i> <span class="d-none d-sm-inline">Sort ↓ preț + nume</span>
+  </button>
+</div>
+        </p>
+      
+        <p id="p-suma">Apăsați Alt+"c" pentru suma preturilor produselor afișate. </p>
+  
+        <section id="produse">
+
+            <h2>Produse</h2>
+            <div id="mesaj" style="display: none; color: red;">NU EXISTA PRODUSE DISPONIBILE</div>
+            <div class="grid-produse">
+              <p style="color:red;">Oferta curentă: <%= JSON.stringify(ofertaCurenta) %></p>
+
+                <% for( let prod of locals.produse) { %>
+                    <!-- <article class="produs" > -->
+                      <article class="produs" data-id="<%- prod.id %>">
+
+                        <h3 class="nume">Nume: <a href="/produs/<%-prod.id %>" ><span class="val-nume"><%- prod.nume%></span></a></h3>
+                        <div class="info-prod">
+                           
+                            <%
+  let reducere = 0;
+  let pretNou = prod.pret;
+
+  if (ofertaCurenta && ofertaCurenta.categorie && ofertaCurenta.reducere) {
+    const dataFinal = new Date(ofertaCurenta["data-finalizare"]);
+    const acum = new Date();
+    if (prod.categorie === ofertaCurenta.categorie && acum.getTime() < dataFinal.getTime()) {
+      reducere = ofertaCurenta.reducere;
+      pretNou = Math.round(prod.pret * (1 - reducere / 100));
+    }
+  }
+%>
+<p class="pret">
+  <% if (reducere) { %>
+    <s class="pret-vechi"><%= prod.pret %> lei</s>
+    <span class="pret-redus val-pret"><%= pretNou %> lei (-<%= reducere %>%)</span>
+  <% } else { %>
+    <span class="val-pret"><%= prod.pret %> lei</span>
+  <% } %>
+</p>
+
+
+
+                            <p class="durata_zile">durata_zile(zile): <span class="val-durata_zile"><%- prod.durata_zile%></span></p>
+                            <p class="anotimp">Anotimp: <span class="val-anotimp"><%- prod.anotimp%></span></p>
+                        </div>
+                        <p class="categorie">Categorie:<span class="val-categorie"><%- prod.categorie%></span></p>
+                        <p class="destinatii">Destinații: <span class="val-destinatii"><%- prod.destinatii%></span></p>
+                        <p class="descriere">Descriere: <span class="val-descriere"><%- prod.descriere%></span></p>
+                        <figure>
+                            <a href="/produs/<%-prod.id %>" ><img src="/resurse/imagini/produse/<%- prod.imagine %>" style="width:50%;height:auto;" alt="[imagine <%- prod.nume %>]" /></a>
+                        </figure>
+                        <label class="selecteaza-cos">
+                            Selectează:<br/>
+                            <input type="checkbox" class="select-cos" value="<%-prod.id %>" autocomplete="off">
+                        </label>
+                    </article>
+                <% }%>
+            </div>
+        </section>
+
+<div id="sortare-dubla">
+  <label>Cheie 1:
+    <select id="cheie1">
+      <option value="nume">Nume</option>
+      <option value="pret">Preț</option>
+      <option value="categorie">Categorie</option>
+    </select>
+  </label>
+  <select id="sens1">
+    <option value="1">Crescător</option>
+    <option value="-1">Descrescător</option>
+  </select>
+
+  <label>Cheie 2:
+    <select id="cheie2">
+      <option value="nume">Nume</option>
+      <option value="pret">Preț</option>
+      <option value="categorie">Categorie</option>
+    </select>
+  </label>
+  <select id="sens2">
+    <option value="1">Crescător</option>
+    <option value="-1">Descrescător</option>
+  </select>
+
+  <button id="btn-sortare-dubla">Sortează</button>
+</div>
+
+
+    </main>
+
+
+    <div id="suma-produse" style="margin-top: 10px; font-weight: bold; font-size: 1.2em;">
+  Total preț produse afișate: 0 lei
+</div>
+
+
+<video id="bg-video" autoplay muted loop playsinline>
+    <source src="resurse/video/aquarium.mp4" type="video/mp4">
+  </video>
+
+    <%- include("../fragmente/footer") %>
+    </body>
+    <div class="modal fade" id="modalProdus" tabindex="-1" aria-labelledby="modalProdusLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content" style="background-color:aquamarine; color: var(--culoare-text);">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalProdusLabel">Detalii produs</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Închide"></button>
+      </div>
+      <div class="modal-body" id="continut-modal">
+        <!-- aici se va injecta conținutul -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/resurse/js/oferta.js"></script>
+
+
+</html>

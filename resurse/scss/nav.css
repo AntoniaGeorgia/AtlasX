@@ -1,0 +1,330 @@
+@charset "UTF-8";
+#hamburger,
+#ch-menu {
+  display: none;
+}
+
+nav {
+  --inaltime-meniu: 30px;
+  --latime-buton: 100px;
+  background-color: var(--buton-color);
+  height: var(--inaltime-meniu);
+  position: sticky;
+  top: 0;
+}
+
+ul.meniu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.meniu li {
+  height: var(--inaltime-meniu);
+  border: 1px solid var(--footer-color);
+  box-sizing: border-box;
+  text-align: center;
+  font-weight: bold;
+  line-height: var(--inaltime-meniu);
+  transition: all 1s linear;
+  position: relative;
+  background-color: white;
+}
+
+ul.meniu li:hover {
+  background-color: var(--footer-color);
+  cursor: pointer;
+}
+
+ul.meniu li:hover a,
+ul.meniu li:hover div {
+  text-decoration: none;
+}
+
+ul.meniu a,
+ul.meniu div {
+  color: black;
+  text-decoration: none;
+  transition: all 1s linear;
+  display: block;
+  height: 100%;
+  cursor: pointer;
+}
+
+ul.meniu > li > .text-icon,
+ul.meniu > li > .imag-icon {
+  display: inline-block;
+  text-align: center;
+  margin: 5px;
+}
+
+ul.meniu > li .imag-icon {
+  font-size: 20px;
+}
+
+/* SUBMENIU ca GRILĂ */
+ul.meniu > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background: white; /* fundal alb */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  list-style: none;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* grilă */
+  gap: 5px;
+}
+
+ul.meniu > li:hover > ul {
+  display: grid; /* activăm grila la hover */
+}
+
+ul.meniu > li ul li {
+  margin: 0;
+}
+
+ul.meniu > li ul li a {
+  color: var(--buton-color); /* culoare text */
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  padding: 5px;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+ul.meniu > li ul li a:hover {
+  background-color: var(--buton-color); /* fundal la hover */
+  color: white; /* text alb la hover */
+}
+
+@media print {
+  /* Ascundem elementele media și dependentele */
+  img,
+  video,
+  iframe,
+  figcaption,
+  .link-inceput,
+  nav,
+  .meniu {
+    display: none !important;
+  }
+  /* Afișăm gridul ca block */
+  .grid,
+  [class*=grid] {
+    display: block !important;
+  }
+  /* Linkurile apar ca text simplu */
+  a {
+    text-decoration: none !important;
+    color: black !important;
+  }
+  /* Bannerul din footer apare sus pe prima pagină */
+  footer p.banner {
+    position: fixed;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    border: 1px dotted black;
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+  }
+  /* Heading-ul H1 centrat, mare, subliniat, urmat de page break */
+  h1 {
+    page-break-before: always;
+    page-break-after: always;
+    text-align: center;
+    font-size: 2.5em;
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  /* Page break înainte de footer */
+  footer {
+    page-break-before: always;
+  }
+  /* Watermark pe fiecare pagină */
+  body::after {
+    content: "Sava Antonia"; /* înlocuiește cu numele tău real */
+    position: fixed;
+    bottom: 1cm;
+    right: 1cm;
+    width: 100px;
+    height: 2cm;
+    border: 3px double black;
+    opacity: 0.65;
+    text-align: center;
+    font-size: 12px;
+    line-height: 2cm;
+    z-index: 1000;
+  }
+  /* Margini diferențiate pentru pagini perechi */
+  @page :left {
+    margin-left: 2.5cm;
+    margin-right: 0.5cm;
+  }
+  @page :right {
+    margin-left: 0.5cm;
+    margin-right: 2.5cm;
+  }
+  /* Previne marginile implicite conflictuale în unele browsere */
+  @page {
+    margin-top: 2cm;
+    margin-bottom: 2cm;
+  }
+}
+@media screen and (max-width: 600px) {
+  .meniu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 10px;
+    gap: 10px;
+  }
+  .meniu li {
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+  }
+  .hamburger {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    z-index: 100;
+  }
+  .meniu.active {
+    display: flex;
+  }
+  .meniu li {
+    transition: all 0.3s ease;
+  }
+  .meniu li a {
+    color: white;
+    text-decoration: none;
+  }
+  .meniu li:hover::before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #fff;
+    animation: shadowSlide 0.3s forwards;
+  }
+  @keyframes shadowSlide {
+    from {
+      top: -5px;
+    }
+    to {
+      top: 0;
+    }
+  }
+  /* Submeniuri */
+  ul.meniu li ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #444;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  ul.meniu li:hover ul {
+    display: block;
+    transform: scaleY(1);
+  }
+}
+ul.meniu li::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-color: var(--footer-color);
+  opacity: 0;
+  transition: top 0.4s ease, opacity 0.4s ease;
+}
+
+ul.meniu li:hover::before {
+  top: 0;
+  opacity: 1;
+}
+
+ul.meniu > li > ul {
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 10px;
+  list-style: none;
+  gap: 5px;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  pointer-events: none;
+}
+
+ul.meniu > li:hover > ul {
+  opacity: 1;
+  transform: scaleY(1);
+  pointer-events: all;
+}
+
+ul.meniu > li ul li a {
+  position: relative;
+  overflow: hidden;
+}
+
+ul.meniu > li ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--buton-color);
+  transition: width 0.3s ease-in-out;
+}
+
+ul.meniu > li ul li a:hover::after {
+  width: 100%;
+}
+
+@keyframes animatie_submeniu {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/*# sourceMappingURL=nav.css.map */

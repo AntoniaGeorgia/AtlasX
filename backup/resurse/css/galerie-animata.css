@@ -1,0 +1,132 @@
+#galerie-animata {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  #galerie-animata {
+    display: block;
+  }
+  .container-galerie {
+    display: flex;
+    justify-content: center;
+  }
+  .cadru {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border: 20px solid transparent;
+    border-image: url("../imagini/galerie/ocean.jpeg") 40 round;
+  }
+  .cadru:hover figure {
+    animation-play-state: paused;
+  }
+  .cadru figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%) scale(0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    animation: animatie-slide calc(var(--nr-imagini) * 2s) linear infinite;
+    animation-fill-mode: forwards;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .cadru .img-anim-1 {
+    animation-delay: 0s;
+    z-index: 12;
+  }
+  .cadru .img-anim-2 {
+    animation-delay: 2s;
+    z-index: 11;
+  }
+  .cadru .img-anim-3 {
+    animation-delay: 4s;
+    z-index: 10;
+  }
+  .cadru .img-anim-4 {
+    animation-delay: 6s;
+    z-index: 9;
+  }
+  .cadru .img-anim-5 {
+    animation-delay: 8s;
+    z-index: 8;
+  }
+  .cadru .img-anim-6 {
+    animation-delay: 10s;
+    z-index: 7;
+  }
+  .cadru .img-anim-7 {
+    animation-delay: 12s;
+    z-index: 6;
+  }
+  .cadru .img-anim-8 {
+    animation-delay: 14s;
+    z-index: 5;
+  }
+  .cadru .img-anim-9 {
+    animation-delay: 16s;
+    z-index: 4;
+  }
+  .cadru .img-anim-10 {
+    animation-delay: 18s;
+    z-index: 3;
+  }
+  .cadru .img-anim-11 {
+    animation-delay: 20s;
+    z-index: 2;
+  }
+  .cadru .img-anim-12 {
+    animation-delay: 22s;
+    z-index: 1;
+  }
+  .cadru figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s, opacity 0.5s;
+    display: block;
+  }
+  .cadru figure figcaption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.3rem 0.6rem;
+    margin: 0;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+  @keyframes animatie-slide {
+    0% {
+      opacity: 0;
+      transform: translateX(100%) scale(0.5);
+    }
+    5% {
+      opacity: 1;
+      transform: translateX(0%) scale(1);
+    }
+    20% {
+      opacity: 1;
+      transform: translateX(0%) scale(1);
+    }
+    25% {
+      opacity: 0;
+      transform: translateX(-100%) scale(0.5);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-100%) scale(0.5);
+    }
+  }
+}

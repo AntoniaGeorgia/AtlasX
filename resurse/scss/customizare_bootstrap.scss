@@ -1,0 +1,31 @@
+// customizare_bootstrap.scss
+
+@use '../../node_modules/bootstrap/scss/bootstrap' with (
+  $primary: #6c5ce7,
+  $secondary: #00cec9,
+  $btn-border-radius: 0.50rem,
+  $btn-border-width: 1px,
+  $input-border-radius: 0.50rem,
+  $input-border-width: 1px,
+
+  // Range
+  $form-range-track-bg: #00cec9,
+  $form-range-track-height: 0.5rem,
+  $form-range-track-border-radius: 1rem,
+  $form-range-thumb-width: 1.5rem,
+  $form-range-thumb-height: 1.5rem,
+  $form-range-thumb-bg: #ff69b4,
+  $form-range-thumb-border-radius: 1rem,
+  $form-range-thumb-border: 2px solid #333,
+  $form-range-thumb-box-shadow: 0 0 0.5rem rgba(0,0,0,0.25)
+);
+
+// stil personalizat buton
+.btn {
+  --bs-btn-padding-x: 0.6rem;
+  --bs-btn-padding-y: 0.35rem;
+  --bs-btn-font-size: 0.875rem;
+  --bs-btn-border-radius: 0.6rem;
+  --bs-btn-border-width: 2px;
+}
+

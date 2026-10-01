@@ -1,0 +1,63 @@
+{
+	"cale_galerie":"resurse/imagini/galerie",
+	"imagini": [
+		{
+			"fisier":"rio.jpeg",
+			"descriere":"Brioșe",
+			"luni":["martie","februarie","noiembrie","aprilie", "decembrie","mai"]
+		},
+		{
+			"fisier":"maldives.jpg",
+			"descriere":"Clătite cu dulceață",
+			"luni":["ianuarie","februarie","iunie","mai"]
+			
+		},
+		{
+			"fisier":"australia.jpeg",
+			"descriere":"Gogoși glazurate",
+			"luni":["ianuarie","noiembrie","iunie","martie","aprilie","mai"]
+		},
+		{
+			"fisier":"finlanda.jpeg",
+			"descriere":"Tort cu scorțisoară",
+			
+			"luni":["noiembrie","aprilie", "decembrie"]
+		},
+		{
+			"fisier":"Fjords.jpeg",
+			"descriere":"Prăjitură cu ciocolată",
+			
+			"luni":["noiembrie","aprilie", "decembrie","mai"]
+		},
+		{
+			"fisier":"japan.jpg",
+			"descriere":"Tartă cu afine",
+            "luni":["noiembrie","aprilie", "decembrie","mai"]
+		},
+		{
+			"fisier":"safari.jpeg",
+			"descriere":"Tort special",
+            "luni":["noiembrie","aprilie", "decembrie","mai"]
+		},
+		{
+			"fisier":"luxor.jpeg",
+			"descriere":"Tort special"
+		},
+		
+		
+
+		{"fisier":"cairo.jpeg",
+		"descriere":"Tort special"
+	},
+
+		
+
+		
+
+		{"fisier":"piramide.jpeg",	
+		"descriere":"Tort special"
+	}
+
+
+	]
+}

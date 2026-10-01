@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="AtlasX Travel">
+    <meta name="keywords" content="excursii, pachete turistice, călătorii, vacanțe, turism, destinații exotice">
+    <meta name="description" content="AtlasX - Descoperă cele mai frumoase destinații și rezervă-ți vacanța de vis cu cele mai bune oferte.">
+    <meta name="msapplication-TileColor" content="purple">
+    <%- include("../fragmente/head.ejs") %>
+    
+     
+   <style>
+     figure {
+        width: 100%;
+        max-width: 100%; 
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    figure img {
+        width: 100%;
+        height: auto;
+        object-fit: cover; }
+
+        .container-iframe a {
+            margin-right: 10px;
+            color: blue;
+            text-decoration: none;
+        }
+    
+        .container-iframe a:hover {
+            text-decoration: underline;
+        } 
+        
+    
+</style>
+<div id="top"></div>
+</head>
+
+<body class="theme">
+   <%- include("../fragmente/header.ejs") %>
+ <aside> Rezervarile se fac doar de catre persoanele de peste 18 ani !!!</aside>
+   
+  <!-- <h2>Descoperă Destinațiile Noastre</h2> -->
+  <main>
+    <div id="grid-pagina">
+        <section id="galerie">
+           <img src="resurse/ico/poza.jpeg">
+           <img src="resurse/ico/poza3.png">
+           <img src="resurse/ico/poza4.png">
+           <img src="resurse/ico/Spain_Tenerife.jpg">
+        </section>
+        <section id="acasa">
+  <figure>
+    <picture>
+        <source media="(max-width: 600px)" srcset="resurse/ico/Sagrada_Familia_01.jpg">
+        <source media="(max-width: 1024px)" srcset="resurse/ico/Sagrada_Familia_03.jpg">
+        <img src="resurse/ico/Sagrada_Familia_01.jpg" alt="Sagrada Familia" />
+    </picture>
+
+    <figcaption>
+        <h2>AtlasX - Descoperă Cele Mai Frumoase Destinații pentru Vacanța Ta</h2>
+
+        <p><b>AtlasX Travel</b> este locul ideal pentru a planifica <b>excursii</b> de neuitat! Oferim <b>pachete turistice</b> variate pentru toate gusturile. Fie că vrei o vacanță relaxantă sau o <b>călătorie</b> de aventură, <b>AtlasX</b> te ajută să găsești <b>vacanțe</b> perfecte. Descoperă <b>destinații exotice</b> de vis!</p>
+    
+        <p><i>Turismul este un domeniu vast</i>, iar atunci când vorbim despre vacanțe, este important să cunoaștem <i>destinațiile care sunt cele mai căutate de turiști</i>. Fiecare <i>vacanță</i> oferă experiențe unice!</p>
+    
+        <p><strong>Atenție</strong>: Unele destinații pot avea reglementări speciale. Asigură-te că te informezi despre toate <i>cerințele</i> înainte de a rezerva vacanța.</p>
+    
+        <p><em>Îți recomandăm să alegi destinațiile <i>exotice</i> pentru a-ți crea amintiri de neuitat!</em></p>
+    
+        <p>Te așteptăm să explorezi cele mai frumoase locuri și să îți începi următoarea <b>călătorie</b> cu <b>AtlasX Travel</b>!</p>
+       </figcaption>
+</figure>
+<p><b>ip:</b><%- locals.ip %></p>
+</section> 
+
+<section id="oferte-speciale">
+    <h2>Oferte Speciale</h2>
+
+    <details>
+        <summary>🏝️ Vacanță Exotică - Bali</summary>
+        <p>Pachet de 7 nopți all-inclusive în Bali, transport inclus. Preț: 1200€/persoană.</p>
+    </details>
+
+    <details>
+        <summary>🏔️ Aventură în Alpi</summary>
+        <p>5 zile de drumeții în Alpi, cazare la cabane tradiționale. Preț: 800€/persoană.</p>
+    </details>
+
+    <details>
+        <summary>🌆 City Break la Paris</summary>
+        <p>3 nopți în Paris, zbor dus-întors și mic dejun inclus. Preț: 450€/persoană.</p>
+    </details>
+    <div class="calendar">
+        <table>
+        <thead>
+            <tr>
+                <th>Locuri De Vizitat</th>
+                <th>Pret per persoana</th>
+                <th>Numar locuri disponibile</th>
+                <th>Perioada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Grecia</td>
+                <td>750 €</td>
+                <td>28</td>
+                <td>12-18 mai</td>
+            </tr>
+            <tr>
+                <td>Thailanda</td>
+                <td>1200 €</td>
+                <td>32</td>
+                <td>7-14 august</td>
+            </tr>
+            <tr>
+                <td>Turcia</td>
+                <td>900 €</td>
+                <td>25</td>
+                <td>8-15 septembrie</td>
+            </tr>
+            <tr>
+            <td>Italia</td>
+            <td>820 €</td>
+            <td>22</td>
+            <td>5-11 iunie</td>
+        </tr>
+        <tr>
+            <td>Spania</td>
+            <td>890 €</td>
+            <td>18</td>
+            <td>15-21 iulie</td>
+        </tr>
+        <tr>
+            <td>Franța</td>
+            <td>960 €</td>
+            <td>25</td>
+            <td>8-14 august</td>
+        </tr>
+        </tbody>
+
+</table>
+</div>
+</section>
+<section id="pachete">
+    <h2>Pachete Turistice</h2>
+    <div class="placeholder-box"> Pachete promoționale cu activități incluse</div>
+    <form>
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="Search" placeholder="Cauta destinatii">
+        
+        <div class="form-group">
+            <label for="activitati">Activități:</label>
+            <input type="text" id="activitati" name="activitati" placeholder="Cauta activități dorite">
+        </div>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Cauta zboruri"></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+</section>
+<section id="informatii-utile">
+    <h2>Informații utile</h2>
+
+    <details class="FAQ">
+        <summary>Ce documente sunt necesare pentru a călători?</summary>
+        <p>În funcție de destinație, ai nevoie de pașaport, viză și asigurare de călătorie.</p>
+    </details>
+
+    <details class="FAQ">
+        <summary>Care este cel mai bun sezon pentru vacanțe?</summary>
+        <p>Depinde de destinație! Pentru plajă, vara este ideală, iar pentru drumeții, toamna este perfectă.</p>
+    </details>
+
+<section id="calcul-cost-vacanta">
+    <h2>Calculul Costului unei Vacanțe</h2>
+    <p>Pentru a estima costul unei vacanțe, folosim următoarea formulă:</p>
+
+    <math xmlns="http://www.w3.org/1998/Math/MathML">
+        <mrow>
+            <mi>C</mi> 
+            <mo>=</mo> 
+            <mi>n</mi> 
+            <mo>*</mo> 
+            <mi>p</mi> 
+            <mo>+</mo> 
+            <mi>e</mi>
+        </mrow>
+    </math>
+
+    <p>Unde:</p>
+    <ul class="cost">
+        <li><b>C</b> = Costul total al vacanței</li>
+        <li><b>n</b> = Numărul de nopți de cazare</li>
+        <li><b>p</b> = Prețul per noapte</li>
+        <li><b>e</b> = Alte cheltuieli (transport, mese, activități)</li>
+    </ul>
+</section>
+
+<section id="ghid-pdf">
+    <h2>Ghidul AtlasX - Planificarea Perfectă a Vacanței</h2>
+    <p>Poți răsfoi ghidul nostru complet pentru planificarea vacanței direct aici:</p>
+    
+    <embed src="resurse\ico\Ghid.turism.pdf" type="application/pdf" width="100%" height="500px" />
+    
+    <p><a href="resurse/atlasx-brosura.pdf" download="brosura_atlasx">Descarcă ghidul în format PDF</a></p>
+</section>
+
+  <p>Pentru mai multe informații, vizitează <a href="https://www.youtube.com/watch?v=IuTDuvYr7f0" target="_blank">AtlasX Travel vlog</a> care oferă și mai multe detalii despre vacanțe.</p>
+
+  <div class="container-iframe">
+    <div class="taburi-iframe">
+    <a href="https://www.youtube.com/embed/0XuESn84s6U?si=2dNokoRn-iorfI6u" target="ifr-video">Madeira</a>
+    <a href="https://www.youtube.com/embed/eLPVDaaQybY?si=hc79jCWXRJ1L0N_Q" target="ifr-video" >Destinatii top 2025</a>
+    <a href="https://www.youtube.com/embed/exI_hD_4jAM?si=7VRjQSSbP9fqszta" target="ifr-video" >Cele mai fascinante locuri de vizitat din lume</a><br/>
+    </div>
+
+    <iframe name="ifr-video" width="560" height="315" src="https://www.youtube.com/embed/UEDeptPVNQA?si=-C__fIQhEtWmxgAt" 
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>  
+
+    <p><a href="resurse/atlasx-brosura.pdf" download="brosura_atlasx">Descarcă Brosura AtlasX</a>
+     <div class="cerc">
+    <div class="cerculet"></div>
+    <hr class="linie">
+  </div></p>
+</section>
+
+    
+    
+    <section id="sectiune2">
+        <div class="sectiunea4">
+        <div class="stats-section">
+            <h2>Statistici</h2>
+            <div class="stats-grid">
+                <div class="card">
+                    <h3>Activitate</h3>
+                    <p><strong>Logări:</strong> <span class="placeholder">127</span></p>
+                    <p><strong>Ultima activitate:</strong> <span class="placeholder">2 ore în urmă</span></p>
+                </div>
+                
+                <div class="card">
+                    <h3>Date Personalizate</h3>
+                    <p><strong>Preferințe:</strong> <span class="placeholder">Tema întunecată</span></p>
+                    <p><strong>Ultima acțiune:</strong> <span class="placeholder">Actualizare profil</span></p>
+                </div>
+                
+                <div class="card">
+                    <h3>Statistici Platformă</h3>
+                    <p><strong>Utilizatori activi:</strong> <span class="placeholder">1,542</span></p>
+                    <p><strong>Vizite astăzi:</strong> <span class="placeholder">324</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </section>
+    
+    <section id="sectiune3">
+        <h2>Logati-va la contul dumneavoastra</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Type your message here"></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+<video controls preload="metadata" poster="resurse/video/poza2.jpg" style=" height: auto; aspect-ratio: 16/9; width: 100%; min-width: 300px; max-width: 600px;">
+  <source src="resurse/video/edit2.mp4" type="video/mp4">
+  <source src="resurse/video/edit3.ogv" type="video/ogv">
+
+  <track src="resurse/video/subtitrari2.vtt" kind="subtitles" srclang="ro" label="Română" default>
+  <track src="resurse/video/subtitles.vtt" kind="subtitles" srclang="en" label="Engleză">
+  
+  
+</video>
+ <div id="imagine"></div>
+
+  <div id="efect-css-reflexie-text" data-text="Reflexie frumoasă">
+    Reflexie frumoasă
+  </div>
+  
+    </section>
+
+     <section id="despre">
+         <div class="site-section">
+            <h2>Date Site</h2>
+            <div class="grid-container">
+                <div class="card site-card">
+                    <h3>Trafic</h3>
+                    <div class="info-row">
+                        <span class="info-label">Vizitatori astăzi:</span>
+                        <span class="info-value">1,243</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Vizitatori lunari:</span>
+                        <span class="info-value">28,756</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Rată abandon:</span>
+                        <span class="info-value">32%</span>
+                    </div>
+                </div>
+                <div class="Intrebari">
+                <h2>Întrebări frecvente</h2>
+
+                <details>
+                    <summary>Ce tipuri de pachete turistice oferiți?</summary>
+                    <p class="raspuns">Oferim pachete all-inclusive, city break, aventură, croaziere și multe altele.</p>
+                </details>
+            
+                <details>
+                    <summary>Care sunt cele mai populare destinații?</summary>
+                    <p class="raspuns">Destinațiile noastre populare includ Maldive, Bali, Paris, Roma și Dubai.</p>
+                </details>
+            
+                <details>
+                    <summary>Pot anula rezervarea?</summary>
+                    <p class="raspuns">Da, poți anula rezervarea în termen de 14 zile, în funcție de politica fiecărui pachet.</p>
+                </details>
+            </div>
+            </div>
+        </div>
+
+    </section>
+    
+    <section id="contact">
+    </section>
+</div>
+<main>
+  <!-- <a href="#sectiune">Link intern cu efect radial</a><br> -->
+  <a href="https://travelreview.ro/cele-mai-frumoase-orase-din-romania/">Cele mai frumoase orase din Romania </a>
+
+
+ <section id="galerie-statica">
+    <h2>Galerie</h2>
+    <div id="grid-galerie">
+    <% 
+        let d = new Date();
+        let vect_luni = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie","august","septembrie","octombrie","noiembrie","decembrie"];
+        let luna = vect_luni[d.getMonth()]; 
+        let litere = ['α', 'β', 'γ', 'δ', 'ε', 'ζ', 'η', 'θ', 'ι', 'κ', 'λ', 'μ', 'ν', 'ξ', 'ο', 'π'];
+        let index = 0;
+        for(let imag of locals.imagini) {
+            if(imag.luni && imag.luni.includes(luna)) {
+    %>
+        <picture>
+            <source srcset="<%- imag.fisier_mediu %>" media="screen and (max-width: 1000px)" />
+            <img src="<%= imag.fisier %>" alt="briose">
+              <figcaption><%= litere[index % litere.length] %>. <%= imag.descriere %></figcaption>
+        </picture>
+    <% 
+            index++; 
+            } 
+        } 
+    %>
+    </div>
+</section>
+
+<section id="galerie-animata">
+  <h2>Galerie Animată</h2>
+
+  <%
+    let imaginiValide = [...locals.imagini];
+    let imaginiUnice = [];
+    let max = Math.min(12, imaginiValide.length);
+
+    let variante = [12, 10, 8, 6];
+    let nr = variante.find(v => v <= max) || max;
+
+    while (imaginiUnice.length < nr && imaginiValide.length > 0) {
+      let idx = Math.floor(Math.random() * imaginiValide.length);
+      imaginiUnice.push(imaginiValide[idx]);
+      imaginiValide.splice(idx, 1);
+    }
+  %>
+
+  <div class="container-galerie">
+    <div class="cadru" style="--nr-imagini:<%= imaginiUnice.length %>;">
+      <% for (let i = 0; i < imaginiUnice.length; i++) {
+           let imag = imaginiUnice[i]; %>
+        <figure class="img-anim-<%= i + 1 %>">
+          <img src="<%= imag.fisier %>" alt="<%= imag.descriere %>">
+          <figcaption><%= imag.descriere %></figcaption>
+        </figure>
+      <% } %>
+    </div>
+  </div>
+</section>
+
+
+    
+
+
+</main>
+
+<a href="#" class="back-to-top">
+    <span class="tooltip">Buton pentru a reveni în susul paginii</span>
+</a>
+
+<div class="container text-center py-4">
+  <h1 class="text-primary">Vacanțele tale în culori noi</h1>
+  <button class="btn btn-secondary">Rezervă acum</button>
+</div>
+
+
+<div class="multi-col-text">
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.
+    Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi,
+    non fermentum diam nisl sit amet erat.
+  </p>
+</div>
+
+
+<div class="marquee-container">
+    <div class="marquee">🚀 Acesta este un text animat care se plimbă continuu și fără scrollbar 🚀</div>
+  </div>
+
+ <section class="fixed-bg-excursii">
+  <div class="content">
+    <h2>Explorează lumea cu noi 🌍</h2>
+    <p>
+      Descoperă peisaje uimitoare, aventuri în natură și destinații de vis în fiecare anotimp.
+    </p>
+  </div>
+</section>
+
+
+
+
+
+  <!-- Tabel normal + transpus -->
+  <div class="table-wrapper">
+    <table class="responsive-table">
+      <thead>
+        <tr><th>Nume</th><th>Email</th><th>Telefon</th><th>Oraș</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Nume">Maria</td>
+          <td data-label="Email">maria@gmail.com</td>
+          <td data-label="Telefon">0712345678</td>
+          <td data-label="Oraș">București</td>
+        </tr>
+        <tr>
+          <td data-label="Nume">Ion</td>
+          <td data-label="Email">ion@yahoo.com</td>
+          <td data-label="Telefon">0722123456</td>
+          <td data-label="Oraș">Cluj</td>
+        </tr>
+        <tr>
+          <td data-label="Nume">Elena</td>
+          <td data-label="Email">elena@gmail.com</td>
+          <td data-label="Telefon">0733445566</td>
+          <td data-label="Oraș">Timișoara</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+ <table id="transpus">
+  <thead>
+    <tr>
+      <th>Nume</th>
+      <th>Email</th>
+      <th>Telefon</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Maria</td>
+      <td>maria@gmail.com</td>
+      <td>0712345678</td>
+    </tr>
+    <tr>
+      <td>Ion</td>
+      <td>ion@yahoo.com</td>
+      <td>0722123456</td>
+    </tr>
+  </tbody>
+</table>
+
+   <video id="bg-video" autoplay muted loop playsinline>
+    <source src="resurse/video/aquarium.mp4" type="video/mp4">
+  </video>
+  
+
+ <div class="galerie"></div>
+  <script src="views/pagini/galerie.js"></script>
+  
+<div id="banner-oferta" class="alert alert-warning text-center">
+  <h5>🔥 Ofertă la categoria <span id="oferta-categorie"></span>: <span id="oferta-reducere"></span>% REDUCERE</h5>
+  <p>Mai sunt <span id="timer">--:--:--</span></p>
+</div>
+<script src="/resurse/js/oferta.js"></script>
+
+
+
+</body>
+<%- include("../fragmente/footer.ejs") %>
+</html>

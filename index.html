@@ -7,19 +7,42 @@
     <meta name="keywords" content="excursii, pachete turistice, călătorii, vacanțe, turism, destinații exotice">
     <meta name="description" content="AtlasX - Descoperă cele mai frumoase destinații și rezervă-ți vacanța de vis cu cele mai bune oferte.">
     <meta name="msapplication-TileColor" content="purple">
-   <link rel="stylesheet" href="/css/style.css">
-  
-   <link rel="stylesheet" href="/css/general.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+   <link rel="stylesheet" href="resurse/css/style.css">
+   <link rel="stylesheet" href="resurse/css/general.css">
+   <link rel="stylesheet" href="resurse/css/nav_1.css">
+   <link rel="stylesheet" href="resurse/css/nav.css">
+  <link rel="stylesheet" href="resurse/css/nav1000.css" type="text/css" media="screen and (max-width:1000px)"/>
+   <link rel="stylesheet" href="resurse/css/nav700.css" type="text/css" media="screen and (max-width:700px)">
+
     <title>AtlasX Travel - Excursii și Pachete de Vacanță</title>
 
-<link rel="icon" type="image/png" href="/C:\Users\Antonia\OneDrive\Desktop\resurse\ico/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/C:\Users\Antonia\OneDrive\Desktop\resurse\ico/favicon.svg" />
-<link rel="shortcut icon" href="/C:\Users\Antonia\OneDrive\Desktop\resurse\ico/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/C:\Users\Antonia\OneDrive\Desktop\resurse\ico/apple-touch-icon.png" />
-<link rel="manifest" href="/C:\Users\Antonia\OneDrive\Desktop\resurse\ico/site.webmanifest" />
+    <link rel="apple-touch-icon" sizes="57x57" href="resurse/ico/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="resurse/ico/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="resurse/ico/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="resurse/ico/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="resurse/ico/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="resurse/ico/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="resurse/ico/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="resurse/ico/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="resurse/ico/apple-icon-180x180.png">
 
+<link rel="icon" type="image/png" sizes="192x192" href="resurse/ico/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="resurse/ico/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="resurse/ico/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="resurse/ico/favicon-16x16.png">
+
+<link rel="manifest" href="resurse/ico/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="resurse/ico/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Codystar:wght@300;400&family=Roboto:ital,wght@0,100..900;1,100..900&family=Satisfy&display=swap" rel="stylesheet">
 <style>
-    figure {
+     figure {
         width: 100%;
         max-width: 100%; 
         margin: 0 auto;
@@ -39,38 +62,57 @@
     
         .container-iframe a:hover {
             text-decoration: underline;
-        }
+        } 
+        
     
 </style>
 <div id="top"></div>
-
 </head>
 <body>
-<aside> Rezervarile se fac doar de catre persoanele de peste 18 ani !!!</aside>
+ <aside> Rezervarile se fac doar de catre persoanele de peste 18 ani !!!</aside>
    <header>
     <h1>Bine ai venit pe AtlasX!</h1>
-    <p>Descoperă cele mai frumoase destinații din lume și planifică-ți vacanța perfectă.</p>
+    <p>Descoperă cele mai frumoase destinații din lume și planifică-ți vacanța perfectă.</p> </header> 
   <nav>
-    <ul>
-        <!--Optiuni principale-->
-        <li><a href="#acasa">Acasa</a>
-            <!--Secundare-->
-            <ul>
-                <li><a href="#sectiune1">Sectiunea1</a></li>
-                <li><a href="#sectiune2">Sectiunea2</a></li>
-                <li><a href="#sectiune3">Sectiunea3</a></li>
-            </ul>
-        </li>
-        <li><a href="#despre">Despre</a> </li>
-        <li><a href="#pachete">Pachete turistice</a> </li>
-        <li><a href="#contact">Contact</a> </li>
+    
+    <input type="checkbox" id="ch-menu" />
 
-    </ul>
-  </nav>
+<label for="ch-menu" class="hamburger-menu">
+  <span class="bar bar1"></span>
+  <span class="bar bar2"></span>
+  <span class="bar bar3"></span>
+</label>
 
-  <h2>Descoperă Destinațiile Noastre</h2>
+<nav>
+  <ul class="meniu">
+    <li>
+      <div class="text-icon" id="acasa1">Acasa</div>
+      <div class="imag-icon" id="acasa-mediu">
+        <span class="fas fa-regular fa-house"></span>
+      </div>
+      <ul>
+        <li><a href="#informatii-utile">Informatii Utile</a></li>
+        <li><a href="#sectiune2">Sectiunea 2</a></li>
+        <li><a href="#sectiune3">Sectiunea 3</a></li>
+      </ul>
+    </li>
+    <li><a href="#despre">Despre</a></li>
+    <li><a href="#pachete">Pachete turistice</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <div class="item1">
+
+  <!-- <h2>Descoperă Destinațiile Noastre</h2> -->
+  <main>
+    <div id="grid-pagina">
+        <section id="galerie">
+           <img src="resurse/ico/poza.jpeg">
+           <img src="resurse/ico/poza3.png">
+           <img src="resurse/ico/poza4.png">
+           <img src="resurse/ico/Spain_Tenerife.jpg">
+        </section>
+        <section id="acasa">
   <figure>
     <picture>
         <source media="(max-width: 600px)" srcset="resurse/ico/Sagrada_Familia_01.jpg">
@@ -79,7 +121,7 @@
     </picture>
 
     <figcaption>
-        <h1>AtlasX - Descoperă Cele Mai Frumoase Destinații pentru Vacanța Ta</h1>
+        <h2>AtlasX - Descoperă Cele Mai Frumoase Destinații pentru Vacanța Ta</h2>
 
         <p><b>AtlasX Travel</b> este locul ideal pentru a planifica <b>excursii</b> de neuitat! Oferim <b>pachete turistice</b> variate pentru toate gusturile. Fie că vrei o vacanță relaxantă sau o <b>călătorie</b> de aventură, <b>AtlasX</b> te ajută să găsești <b>vacanțe</b> perfecte. Descoperă <b>destinații exotice</b> de vis!</p>
     
@@ -90,43 +132,9 @@
         <p><em>Îți recomandăm să alegi destinațiile <i>exotice</i> pentru a-ți crea amintiri de neuitat!</em></p>
     
         <p>Te așteptăm să explorezi cele mai frumoase locuri și să îți începi următoarea <b>călătorie</b> cu <b>AtlasX Travel</b>!</p>
-    </body>
        </figcaption>
 </figure>
-</div>
-
-  <!-- Image Map Generated by http://www.image-map.net/ -->
-  <img id="harta-destinatii" src="resurse/ico/harta-destinatii.jpg" usemap="#image-map">
-
-  <a href="#item2" ></a>
-<map name="image-map">
-    <area target="_blank" alt="Descopera Praga" title="Descopera Praga" href="https://www.bing.com/maps?q=praga&FORM=HDRSC7&cp=50.05981%7E14.465611&lvl=11.2" coords="458,196,53" shape="circle">
-    <area target="_blank" alt="Descopera Paris" title="Descopera Paris" href="https://www.bing.com/maps?q=paris&FORM=HDRSC7&cp=48.861646~2.76966&lvl=9.7" coords="178,244,53" shape="circle">
-    <area target="_blank" alt="Descopera Roma" title="Descopera Roma " href="https://www.bing.com/maps?q=roma&amp;FORM=HDRSC7&amp;cp=41.903018%7E12.546201&amp;lvl=10.3" coords="414,468,53" shape="circle">
-    <area target="_blank" alt="Descopera Napoli" title="Descopera Napoli" href="https://www.bing.com/maps?q=napoli&FORM=HDRSC7&cp=40.853614%7E14.243005&lvl=12.3" coords="459,499,53" shape="circle">
-    <area target="_blank" alt="Descopera Marseille" title="Descopera Marseille" href="https://www.bing.com/maps?q=marseille&FORM=HDRSC7&cp=43.294168%7E5.405292&lvl=11.7" coords="255,429,53" shape="circle">
-    <area target="_blank" alt="Descopera Barcelona" title="Descopera Barcelona" href="https://www.bing.com/maps?q=barcelona&FORM=HDRSC7&cp=41.394112%7E2.139931&lvl=12.0" coords="173,488,53" shape="circle">
-    <</map>
-  
-
-  <section id="intrebari-frecvente">
-    <h2>Întrebări frecvente</h2>
-
-    <details>
-        <summary>Ce tipuri de pachete turistice oferiți?</summary>
-        <p>Oferim pachete all-inclusive, city break, aventură, croaziere și multe altele.</p>
-    </details>
-
-    <details>
-        <summary>Care sunt cele mai populare destinații?</summary>
-        <p>Destinațiile noastre populare includ Maldive, Bali, Paris, Roma și Dubai.</p>
-    </details>
-
-    <details>
-        <summary>Pot anula rezervarea?</summary>
-        <p>Da, poți anula rezervarea în termen de 14 zile, în funcție de politica fiecărui pachet.</p>
-    </details>
-</section>
+</section> 
 
 <section id="oferte-speciale">
     <h2>Oferte Speciale</h2>
@@ -145,21 +153,88 @@
         <summary>🌆 City Break la Paris</summary>
         <p>3 nopți în Paris, zbor dus-întors și mic dejun inclus. Preț: 450€/persoană.</p>
     </details>
-</section>
+    <div class="calendar">
+        <table>
+        <thead>
+            <tr>
+                <th>Locuri De Vizitat</th>
+                <th>Pret per persoana</th>
+                <th>Numar locuri disponibile</th>
+                <th>Perioada</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Grecia</td>
+                <td>750 €</td>
+                <td>28</td>
+                <td>12-18 mai</td>
+            </tr>
+            <tr>
+                <td>Thailanda</td>
+                <td>1200 €</td>
+                <td>32</td>
+                <td>7-14 august</td>
+            </tr>
+            <tr>
+                <td>Turcia</td>
+                <td>900 €</td>
+                <td>25</td>
+                <td>8-15 septembrie</td>
+            </tr>
+            <tr>
+            <td>Italia</td>
+            <td>820 €</td>
+            <td>22</td>
+            <td>5-11 iunie</td>
+        </tr>
+        <tr>
+            <td>Spania</td>
+            <td>890 €</td>
+            <td>18</td>
+            <td>15-21 iulie</td>
+        </tr>
+        <tr>
+            <td>Franța</td>
+            <td>960 €</td>
+            <td>25</td>
+            <td>8-14 august</td>
+        </tr>
+        </tbody>
 
+</table>
+</div>
+</section>
+<section id="pachete">
+    <h2>Pachete Turistice</h2>
+    <div class="placeholder-box"> Pachete promoționale cu activități incluse</div>
+    <form>
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="Search" placeholder="Cauta destinatii">
+        
+        <div class="form-group">
+            <label for="activitati">Activități:</label>
+            <input type="text" id="activitati" name="activitati" placeholder="Cauta activități dorite">
+        </div>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Cauta zboruri"></textarea>
+        
+        <button type="submit">Submit</button>
+    </form>
+</section>
 <section id="informatii-utile">
     <h2>Informații utile</h2>
 
-    <details>
+    <details class="FAQ">
         <summary>Ce documente sunt necesare pentru a călători?</summary>
         <p>În funcție de destinație, ai nevoie de pașaport, viză și asigurare de călătorie.</p>
     </details>
 
-    <details>
+    <details class="FAQ">
         <summary>Care este cel mai bun sezon pentru vacanțe?</summary>
         <p>Depinde de destinație! Pentru plajă, vara este ideală, iar pentru drumeții, toamna este perfectă.</p>
     </details>
-</section>
 
 <section id="calcul-cost-vacanta">
     <h2>Calculul Costului unei Vacanțe</h2>
@@ -178,7 +253,7 @@
     </math>
 
     <p>Unde:</p>
-    <ul>
+    <ul class="cost">
         <li><b>C</b> = Costul total al vacanței</li>
         <li><b>n</b> = Numărul de nopți de cazare</li>
         <li><b>p</b> = Prețul per noapte</li>
@@ -209,51 +284,123 @@
 </div>  
 
     <p><a href="resurse/atlasx-brosura.pdf" download="brosura_atlasx">Descarcă Brosura AtlasX</a></p>
-        
-        </header> 
-   <main>
-    <section id="acasa">
-        <h2>Acasă</h2>
-        <p>Secțiunea principală a site-ului.</p>
-    </section>
+</section>
+
     
-    <section id="sectiune1">
-        <h2>Secțiunea 1</h2>
-        <p>Informații despre prima secțiune a site-ului.</p>
-    </section>
     
     <section id="sectiune2">
-        <h2>Secțiunea 2</h2>
-        <p>Informații despre a doua secțiune a site-ului.</p>
+        <div class="sectiunea4">
+        <div class="stats-section">
+            <h2>Statistici</h2>
+            <div class="stats-grid">
+                <div class="card">
+                    <h3>Activitate</h3>
+                    <p><strong>Logări:</strong> <span class="placeholder">127</span></p>
+                    <p><strong>Ultima activitate:</strong> <span class="placeholder">2 ore în urmă</span></p>
+                </div>
+                
+                <div class="card">
+                    <h3>Date Personalizate</h3>
+                    <p><strong>Preferințe:</strong> <span class="placeholder">Tema întunecată</span></p>
+                    <p><strong>Ultima acțiune:</strong> <span class="placeholder">Actualizare profil</span></p>
+                </div>
+                
+                <div class="card">
+                    <h3>Statistici Platformă</h3>
+                    <p><strong>Utilizatori activi:</strong> <span class="placeholder">1,542</span></p>
+                    <p><strong>Vizite astăzi:</strong> <span class="placeholder">324</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
     </section>
     
     <section id="sectiune3">
-        <h2>Secțiunea 3</h2>
-        <p>Informații despre a treia secțiune a site-ului.</p>
+        <h2>Logati-va la contul dumneavoastra</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" placeholder="Type your message here"></textarea>
+            
+            <button type="submit">Submit</button>
+        </form>
     </section>
 
-    <section id="despre">
-        <h2>Despre</h2>
-        <p>Informații despre site-ul nostru.</p>
+     <section id="despre">
+         <div class="site-section">
+            <h2>Date Site</h2>
+            <div class="grid-container">
+                <div class="card site-card">
+                    <h3>Trafic</h3>
+                    <div class="info-row">
+                        <span class="info-label">Vizitatori astăzi:</span>
+                        <span class="info-value">1,243</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Vizitatori lunari:</span>
+                        <span class="info-value">28,756</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Rată abandon:</span>
+                        <span class="info-value">32%</span>
+                    </div>
+                </div>
+                <div class="Intrebari">
+                <h2>Întrebări frecvente</h2>
+
+                <details>
+                    <summary>Ce tipuri de pachete turistice oferiți?</summary>
+                    <p class="raspuns">Oferim pachete all-inclusive, city break, aventură, croaziere și multe altele.</p>
+                </details>
+            
+                <details>
+                    <summary>Care sunt cele mai populare destinații?</summary>
+                    <p class="raspuns">Destinațiile noastre populare includ Maldive, Bali, Paris, Roma și Dubai.</p>
+                </details>
+            
+                <details>
+                    <summary>Pot anula rezervarea?</summary>
+                    <p class="raspuns">Da, poți anula rezervarea în termen de 14 zile, în funcție de politica fiecărui pachet.</p>
+                </details>
+            </div>
+            </div>
+        </div>
+
     </section>
     
-    <section id="pachete">
-        <h2>Pachete Turistice</h2>
-        <p>Descoperă ofertele noastre de vacanță.</p>
-    </section>
-
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Începe conversația cu noi.</p>
     </section>
-
-   
+</div>
 
 </main>
-    
+
+<a href="#" class="back-to-top">
+    <span class="tooltip">Buton pentru a reveni în susul paginii</span>
+</a>
+
+<script>
+    document.querySelector('.back-to-top').addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+</script>
+
+
+</body>
 <footer>
-    <a href="#top">Înapoi la început</a>
     <footer>
+        <p class="banner">Acesta este un proiect școlar!</p>
+      </footer>
+      
+    <!-- <a href="#top">Înapoi la început</a> -->
         <address>
             📞 Telefon: <a href="tel:+40712345678">+40 712 345 678</a><br>
             📍 Adresă: <a href="https://www.google.com/maps?q=Facultatea+de+Matematica+si+Informatica" target="_blank">
@@ -266,19 +413,20 @@
             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
     
-        <small>&copy; <time datetime="2024-03-09">Martie 2024</time> AtlasX Travel. Toate drepturile rezervate.</small>
+        <small>&copy; <time datetime="2025-03-09">Martie 2025</time> AtlasX Travel. Toate drepturile rezervate.</small>
     </footer>
-    
-    <div class="grid-container">
-        
-        <div class="item item8" >8</div>
-        <div class="item item3" >3</div>
-        <div class="item item2" >2</div>
-        <div class="item item4" >4</div>
-        <div class="item item5" >5</div>
-        <div class="item item6">6</div>
-        <div class="item item7">7</div>
-    </div>
 
-</body>
+ <img id="harta-destinatii" src="resurse/ico/harta-destinatii.jpg" usemap="#image-map">
+
+
+<map name="image-map">
+    <area target="_blank" alt="Descopera Praga" title="Descopera Praga" href="https://www.bing.com/maps?q=praga&FORM=HDRSC7&cp=50.05981%7E14.465611&lvl=11.2" coords="458,196,53" shape="circle">
+    <area target="_blank" alt="Descopera Paris" title="Descopera Paris" href="https://www.bing.com/maps?q=paris&FORM=HDRSC7&cp=48.861646~2.76966&lvl=9.7" coords="178,244,53" shape="circle">
+    <area target="_blank" alt="Descopera Roma" title="Descopera Roma " href="https://www.bing.com/maps?q=roma&amp;FORM=HDRSC7&amp;cp=41.903018%7E12.546201&amp;lvl=10.3" coords="414,468,53" shape="circle">
+    <area target="_blank" alt="Descopera Napoli" title="Descopera Napoli" href="https://www.bing.com/maps?q=napoli&FORM=HDRSC7&cp=40.853614%7E14.243005&lvl=12.3" coords="459,499,53" shape="circle">
+    <area target="_blank" alt="Descopera Marseille" title="Descopera Marseille" href="https://www.bing.com/maps?q=marseille&FORM=HDRSC7&cp=43.294168%7E5.405292&lvl=11.7" coords="255,429,53" shape="circle">
+    <area target="_blank" alt="Descopera Barcelona" title="Descopera Barcelona" href="https://www.bing.com/maps?q=barcelona&FORM=HDRSC7&cp=41.394112%7E2.139931&lvl=12.0" coords="173,488,53" shape="circle">
+    <</map>
+  
+
 </html>

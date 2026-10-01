@@ -1,0 +1,22 @@
+{
+  "oferte": [
+    {
+      "categorie": "last minute",
+      "data-incepere": "2025-06-24T18:36:00.000Z",
+      "data-finalizare": "2025-06-24T19:36:00.000Z",
+      "reducere": 30
+    },
+    {
+      "categorie": "standard",
+      "data-incepere": "2025-06-24T18:36:00.000Z",
+      "data-finalizare": "2025-06-24T19:36:00.000Z",
+      "reducere": 10
+    },
+    {
+      "categorie": "premium",
+      "data-incepere": "2025-06-24T18:36:00.000Z",
+      "data-finalizare": "2025-06-24T19:36:00.000Z",
+      "reducere": 20
+    }
+  ]
+}

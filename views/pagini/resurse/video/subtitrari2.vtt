@@ -1,0 +1,32 @@
+WEBVTT
+
+STYLE
+::cue {
+  background-color: #f0f8ff;
+  color: #001f3f;
+  font-weight: bold;
+}
+
+::cue(.colt-sus) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: right;
+}
+
+WEBVTT
+1
+00:00:01.000 --> 00:00:04.000
+E aproape vară, iar eu tot nu găsisem o vacanță care să fie și accesibilă, și într-un loc de vis...
+
+2
+00:00:04.500 --> 00:00:08.000
+Totul părea scump sau... dezamăgitor.
+
+3
+00:00:08.500 --> 00:00:12.000
+Dar noroc cu prietena mea! Ea mi-a arătat AtlasX – site-ul care ne-a salvat planurile de vară.
+
+4
+00:00:12.500 --> 00:00:16.000
+Am prins oferte cu reduceri și acum plecăm împreună într-o vacanță de neuitat! 🌞✈️

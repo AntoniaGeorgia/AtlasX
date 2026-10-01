@@ -1,0 +1,100 @@
+#galerie-animata {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  #galerie-animata {
+    display: block;
+    
+  }
+
+  .container-galerie {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cadru {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+    border: 20px solid transparent;
+    border-image: url("../imagini/galerie/ocean.jpeg") 40 round;
+  }
+
+  .cadru:hover figure {
+    animation-play-state: paused;
+  }
+
+  .cadru figure {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(100%) scale(0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    animation: unquote("animatie-slide calc(var(--nr-imagini) * 2s) linear infinite");
+    animation-fill-mode: forwards;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  @for $i from 1 through 12 {
+    .cadru .img-anim-#{$i} {
+      animation-delay: #{($i - 1) * 2}s;
+      z-index: #{13 - $i};
+    }
+  }
+
+  .cadru figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s, opacity 0.5s;
+    display: block;
+  }
+
+  .cadru figure figcaption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.3rem 0.6rem;
+    margin: 0;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  @keyframes animatie-slide {
+    0% {
+      opacity: 0;
+      transform: translateX(100%) scale(0.5);
+    }
+    5% {
+      opacity: 1;
+      transform: translateX(0%) scale(1);
+    }
+    20% {
+      opacity: 1;
+      transform: translateX(0%) scale(1);
+    }
+    25% {
+      opacity: 0;
+      transform: translateX(-100%) scale(0.5);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-100%) scale(0.5);
+    }
+  }
+}

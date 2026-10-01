@@ -1,0 +1,116 @@
+ html{
+    font-size: 18px;
+ }
+ body{
+    --spatiere-pagina:50px;
+     background-color: var(--header-bg);
+   
+} 
+h1{
+     font-family: "Codystar", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--buton-color);
+}
+
+
+#grid-pagina{
+    grid-template-columns: repeat(4,1fr);
+    display: grid;
+    grid-template-areas: "galerie galerie galerie galerie"
+                        "acasa acasa acasa acasa"
+                         "pachete oferte-speciale oferte-speciale sectiune2"
+                         "sectiune3 despre informatii-utile informatii-utile";
+                         /* "contact contact intrebari-frecvente intrebari-frecvente"; */
+                         
+
+
+}
+#grid-pagina >*{
+    outline: 1px solid blueviolet;
+    padding: 4px;
+}
+#grid-pagina > figure{
+    margin:0;
+}
+#grid-pagina img{
+    width: 100%;
+    max-width: 300px;
+
+}
+main{
+    padding-left: var(--spatiere-pagina);
+    padding-right: var(--spatiere-pagina);
+}
+#galerie{
+    grid-area:galerie;
+    grid-template-rows: 1;
+}
+#acasa{
+    grid-area: acasa;
+    grid-template-rows: 2;}
+#sectiune2{
+    grid-area:sectiune2;
+}
+ #sectiune3{
+    grid-area:sectiune3;
+}
+#despre{
+    grid-area:despre;
+}
+#pachete{
+    grid-area:pachete;
+}
+ #contact{
+    grid-area:contact;
+}
+#intrebari-frecvente{
+    grid-area: intrebari-frecvente;
+}
+#oferte-speciale{
+    grid-area: oferte-speciale;
+     font-style: italic;
+}
+#informatii-utile{
+    grid-area: informatii-utile;
+    grid-template-rows: 3;
+}
+figcaption{
+    text-align: center;
+}
+
+#galerie {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap:0; 
+}
+
+#galerie img {
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 10px; 
+}
+
+@media screen and (max-width:1200px) {
+    html{
+        font-size: 14px;
+    }
+    body{
+        --spatiere-pagina:50px;
+    }
+    
+}
+@media screen and (max-width:800px) {
+    #grid-pagina{
+        display: block;
+    }
+    html{
+        font-size: 10px;
+    }
+    body{
+        --spatiere-pagina:20px;
+    }
+    
+}
+
